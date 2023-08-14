@@ -7,6 +7,7 @@ public class DigitSum {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         System.out.println(printDigitSum(num));
+        sc.close();
     }
 
     static int printDigitSum(int num) {
@@ -17,5 +18,6 @@ public class DigitSum {
         return sum + restSum;
         // or
         // return num%10+printDigitSum(num/10);
+
     }
 }

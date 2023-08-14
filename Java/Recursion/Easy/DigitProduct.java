@@ -8,6 +8,7 @@ public class DigitProduct {
         System.out.println("Enter number!");
         int num = sc.nextInt();
         System.out.println(printDigitProduct(num));
+        sc.close();
     }
 
     static int printDigitProduct(int num) {
