@@ -10,6 +10,7 @@ public class ReverseN {
         int num = sc.nextInt();
         reverse(num);
         System.out.println("reversed:" + result);
+        sc.close();
     }
 
     static void reverse(int num) {

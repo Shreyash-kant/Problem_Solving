@@ -10,6 +10,7 @@ public class StairsPath {
         int n = sc.nextInt();
         ArrayList<String> myList = getStairsPaths(n);
         System.out.println(myList);
+        sc.close();
     }
 
     public static ArrayList<String> getStairsPaths(int n) {

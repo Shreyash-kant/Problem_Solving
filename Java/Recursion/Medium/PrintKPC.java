@@ -10,7 +10,7 @@ public class PrintKPC {
         System.out.println("provide the pressed key-combination!");
         String str = sc.next();
         printKPC(str);
-
+        sc.close();
     }
 
     public static void printKPC(String str) {

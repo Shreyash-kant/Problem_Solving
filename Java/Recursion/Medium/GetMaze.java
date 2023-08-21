@@ -11,6 +11,7 @@ public class GetMaze {
         // first cell is considered as 1,1
         ArrayList<String> list = getMazePath(1, 1, n, m);
         System.out.println(list);
+        sc.close();
     }
 
     public static ArrayList<String> getMazePath(int srcRow, int srcCol, int desRow, int desCol) {

@@ -30,5 +30,6 @@ public class GetKPC {
         String str = sc.next();
         ArrayList<String> mylist = getKeywordCombination(str);
         System.out.println(mylist);
+        sc.close();
     }
 }

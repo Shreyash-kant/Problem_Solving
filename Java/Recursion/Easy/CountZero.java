@@ -7,6 +7,7 @@ public class CountZero {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         System.out.println("zeros:" + zeroCount(num, 0));
+        sc.close();
     }
 
     public static int zeroCount(int num, int zeros) {

@@ -9,6 +9,7 @@ public class GetSubSeq {
         String str = sc.next();
         ArrayList<String> myList = getSequence(str);
         System.out.println(myList);
+        sc.close();
     }
     // subsequence is different from substring
     // in subsequence we can ommit some characters in between eg. String:abc
