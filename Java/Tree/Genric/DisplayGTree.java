@@ -2,6 +2,7 @@ package Java.Tree.Genric;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Queue;
 
 public class DisplayGTree {
     public static class Node {
@@ -92,6 +93,49 @@ public class DisplayGTree {
         System.out.println("Node post: " + root.data);
     }
 
+    static void levelOrder(Node root) {
+        // this is following : remove(if not empty)-->print(current root data)-->add(all
+        // the children of current root)
+        Queue<Node> qu = new ArrayDeque<>();
+        qu.add(root);
+        while (!qu.isEmpty()) {
+            Node temp = qu.remove();
+            System.out.print(temp.data + " ");
+            for (Node child : temp.children)
+                qu.add(child);
+        }
+        System.out.println(".");
+    }
+
+    static void levelOrderLine(Node root) {
+        // here we are creating two queues to maintain two generations, father and
+        // children.
+        Queue<Node> fathersQueue = new ArrayDeque<>();
+        Queue<Node> childrenQueue = new ArrayDeque<>();
+        // first root that is the first father or grandfather if no. of levels are more
+        // than two.
+        fathersQueue.add(root);
+        while (!fathersQueue.isEmpty()) {
+            // take out the father and print the value (first gen)
+            Node father = fathersQueue.remove();
+            System.out.print(father.data + " ");
+            // if this father has children, add all the children in children queue(secong
+            // gen).
+            for (Node child : father.children)
+                childrenQueue.add(child);
+
+            // if first generation has done with their work
+            // the second generation will enter into the fathers queues.
+            if (fathersQueue.isEmpty()) {
+                while (!childrenQueue.isEmpty()) {
+                    fathersQueue.add(childrenQueue.remove());
+                }
+                System.out.println("");
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         int[] arr = { 10, 20, 30, -1, 40, -1, -1, 50, 60, -1, 70, -1, 80, -1, -1, 90, 11, 4, -1, 3, -1, -1, -1 };
         ArrayDeque<Node> stack = new ArrayDeque<>();
@@ -118,5 +162,9 @@ public class DisplayGTree {
         preOrder(root);
         System.out.println("\npre-order pep style!");
         pepPreOrder(root);
+        System.out.println("Level-Order:");
+        levelOrder(root);
+        System.out.println("Level-Order traversal linewise!");
+        levelOrderLine(root);
     }
 }
