@@ -127,9 +127,8 @@ public class DisplayGTree {
             // if first generation has done with their work
             // the second generation will enter into the fathers queues.
             if (fathersQueue.isEmpty()) {
-                while (!childrenQueue.isEmpty()) {
-                    fathersQueue.add(childrenQueue.remove());
-                }
+                fathersQueue = childrenQueue;
+                childrenQueue = new ArrayDeque<>();
                 System.out.println("");
             }
         }
