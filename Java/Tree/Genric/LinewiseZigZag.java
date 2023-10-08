@@ -1,22 +1,10 @@
 package Java.Tree.Genric;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
+
 import java.util.Deque;
 
 public class LinewiseZigZag {
-    public static class Node {
-        int data;
-        ArrayList<Node> children = new ArrayList<>();
-
-        Node() {
-
-        }
-
-        Node(int val) {
-            this.data = val;
-        }
-    }
 
     // here we are maintaining two stack
     // first is for parent

@@ -1,14 +1,10 @@
 package Java.Tree.Genric;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
+
 import java.util.Queue;
 
 public class DisplayGTree {
-    public static class Node {
-        int data;
-        ArrayList<Node> children = new ArrayList<>();
-    }
 
     static void display(Node root) {
         String s = root.data + "->";
