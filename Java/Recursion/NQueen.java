@@ -27,8 +27,8 @@ public class NQueen {
 
     static boolean isPlacementPossible(int[][] chess, int row, int col) {
         // check for the same column
-        for (int i = row - 1, j = col; i >= 0; --i, j = col) {
-            if (chess[i][j] == 1)
+        for (int i = row - 1; i >= 0; --i) {
+            if (chess[i][col] == 1)
                 return false;
         }
         // left diagonal
